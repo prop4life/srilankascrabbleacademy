@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sri Lanka Scrabble Academy — coaching, tournaments and a growing community of word-game players.">
+  <title>Sri Lanka Scrabble Academy</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Sri Lanka Scrabble Academy home">
+      <img class="brand-logo" src="slsa-logo.jpg" alt="Sri Lanka Scrabble Academy logo">
+      <span>Sri Lanka<br><strong>Scrabble Academy</strong></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#programmes">Programmes</a><a href="#events">Events</a>
+      <a href="#membership">Membership</a><a href="#contact">Contact</a>
+      <button class="nav-action" type="button" data-modal="registration-modal">Register</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Sri Lanka's dedicated Scrabble learning community</p>
+        <h1>Build words.<br><em>Shape minds.</em></h1>
+        <p class="intro">Structured coaching, competitive play and a welcoming community for beginners, school players and champions.</p>
+        <div class="hero-actions">
+          <button class="button primary" type="button" data-modal="membership-modal">Join the academy</button>
+          <a class="button secondary" href="#programmes">Explore programmes</a>
+        </div>
+        <a class="phone-link" href="tel:+94702131042">Hotline +94 70 213 1042</a>
+      </div>
+      <div class="board-art" aria-label="Sri Lanka Scrabble Academy logo and letter tiles">
+        <div class="logo-stage"><img src="slsa-logo.jpg" alt="SLSA Scrabble board logo"></div>
+        <div class="tile-rack" aria-hidden="true"><div class="tile tile-s"><b>S</b><small>1</small></div><div class="tile"><b>L</b><small>1</small></div><div class="tile"><b>S</b><small>1</small></div><div class="tile"><b>A</b><small>1</small></div></div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Academy highlights">
+      <div><strong>20+</strong><span>Years of coaching experience</span></div>
+      <div><strong>All levels</strong><span>Beginner to international play</span></div>
+      <div><strong>Islandwide</strong><span>School and community programmes</span></div>
+    </section>
+
+    <section class="section split" id="about">
+      <div><p class="eyebrow dark">About SLSA</p><h2>A place for curious minds and competitive players.</h2></div>
+      <div class="prose"><p>Sri Lanka Scrabble Academy develops vocabulary, strategic thinking and confidence through structured coaching and purposeful competition.</p><p>Led by experienced coach Raashid Sudin, the academy supports young players, schools and adults at every stage of the game.</p></div>
+    </section>
+
+    <div class="word-rack" aria-hidden="true"><span>W<small>4</small></span><span>O<small>1</small></span><span>R<small>1</small></span><span>D<small>2</small></span><span>P<small>3</small></span><span>L<small>1</small></span><span>A<small>1</small></span><span>Y<small>4</small></span></div>
+
+    <section class="section programmes" id="programmes">
+      <div class="section-heading"><div><p class="eyebrow dark">Learn and compete</p><h2>Programmes for every rack.</h2></div><button class="text-button" type="button" data-modal="registration-modal">Register for a programme →</button></div>
+      <div class="card-grid">
+        <article class="program-card lime"><span>01</span><h3>Beginners</h3><p>Rules, scoring, word-building and the confidence to complete a full game independently.</p><b>Start with the essentials</b></article>
+        <article class="program-card gold"><span>02</span><h3>School development</h3><p>Progressive sessions for school clubs, inter-school teams and aspiring junior champions.</p><b>Grow a strong school team</b></article>
+        <article class="program-card red"><span>03</span><h3>Competitive coaching</h3><p>Rack management, board control, game analysis and tournament preparation for rated players.</p><b>Sharpen tournament play</b></article>
+      </div>
+    </section>
+
+    <section class="section events" id="events">
+      <div class="section-heading"><div><p class="eyebrow light">What's happening</p><h2>Academy events</h2></div><button class="button light-button" type="button" data-modal="registration-modal">Tournament registration</button></div>
+      <div class="event-list">
+        <article><time datetime="2026">2026</time><div><p>Coaching</p><h3>Weekly academy training</h3><span>Skill-based sessions for beginners and competitive players</span></div></article>
+        <article><time datetime="2026">2026</time><div><p>Schools</p><h3>Scrabble development programmes</h3><span>Structured club coaching and tournament preparation</span></div></article>
+        <article><time datetime="2026">2026</time><div><p>Competition</p><h3>Rated matchplay and tournaments</h3><span>Practice under tournament conditions with guided review</span></div></article>
+      </div>
+    </section>
+
+    <section class="section membership" id="membership">
+      <div class="membership-copy"><p class="eyebrow dark">Become a member</p><h2>Your next great word starts here.</h2><p>Join an active community, access academy sessions and hear first about upcoming tournaments and workshops.</p><button class="button primary" type="button" data-modal="membership-modal">Apply for membership</button></div>
+      <div class="membership-panel"><p>Annual membership</p><strong>LKR 2,000</strong><ul><li>Academy member updates</li><li>Access to member activities</li><li>Player development opportunities</li></ul><button class="button outline" type="button" data-modal="payment-modal">View payment options</button></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="brand footer-brand"><img class="footer-logo" src="slsa-logo.jpg" alt="Sri Lanka Scrabble Academy logo"><span>Sri Lanka<br><strong>Scrabble Academy</strong></span></div>
+    <address><p>Coaching • Workshops • Tournaments</p><a href="tel:+94702131042">+94 70 213 1042</a><span>No.171/5/27, Padiliyathuduwa Rd,<br>Hunupitiya, Wattala</span></address>
+    <p class="copyright">© 2026 Sri Lanka Scrabble Academy. All rights reserved.</p>
+  </footer>
+
+  <dialog id="registration-modal" aria-labelledby="registration-title"><button class="close" type="button" aria-label="Close">×</button><p class="eyebrow dark">Tournament & programme portal</p><h2 id="registration-title">Register your interest</h2><form data-success="Thank you. Your registration details are ready to be sent to the Academy."><label>Player name<input name="name" autocomplete="name" required></label><div class="form-row"><label>Age category<select name="category" required><option value="">Choose category</option><option>Under 12</option><option>Under 15</option><option>Under 20</option><option>Open / Adult</option></select></label><label>Programme<select name="programme" required><option value="">Choose programme</option><option>Beginner coaching</option><option>School programme</option><option>Competitive coaching</option><option>Tournament registration</option></select></label></div><label>Phone number<input name="phone" type="tel" autocomplete="tel" required></label><button class="button primary full" type="submit">Submit details</button><p class="form-note">Submitting opens WhatsApp with your details. Nothing is stored on this website.</p></form></dialog>
+
+  <dialog id="membership-modal" aria-labelledby="membership-title"><button class="close" type="button" aria-label="Close">×</button><p class="eyebrow dark">Academy membership</p><h2 id="membership-title">Join SLSA</h2><form data-success="Thank you. Your membership request is ready to be sent to the Academy."><label>Full name<input name="name" autocomplete="name" required></label><div class="form-row"><label>Preferred hub<select name="hub" required><option>Colombo</option><option>Kelaniya</option><option>Kandy</option><option>Other / Outstation</option></select></label><label>WESPA rating (optional)<input name="rating" inputmode="numeric"></label></div><label>Phone number<input name="phone" type="tel" autocomplete="tel" required></label><button class="button primary full" type="submit">Send membership request</button><p class="form-note">Submitting opens WhatsApp with your details. Nothing is stored on this website.</p></form></dialog>
+
+  <dialog id="payment-modal" aria-labelledby="payment-title"><button class="close" type="button" aria-label="Close">×</button><p class="eyebrow dark">Payment information</p><h2 id="payment-title">Arrange your payment safely</h2><p>This website does not collect card or bank details. Contact the Academy to receive verified payment instructions.</p><div class="payment-options"><div><span>Annual membership</span><strong>LKR 2,000</strong></div><div><span>Other programmes</span><strong>Confirm with SLSA</strong></div></div><a class="button primary full center" href="https://wa.me/94702131042?text=Hello%20SLSA%2C%20please%20send%20me%20the%20verified%20payment%20instructions." target="_blank" rel="noopener">Request instructions on WhatsApp</a></dialog>
+</body>
+</html>
