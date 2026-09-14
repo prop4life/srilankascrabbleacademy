@@ -1,0 +1,10 @@
+<resources>
+    <style name="Theme.SLSA" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:navigationBarColor">@color/slsa_navy</item>
+        <item name="android:statusBarColor">@color/slsa_green_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:colorAccent">@color/slsa_gold</item>
+    </style>
+</resources>

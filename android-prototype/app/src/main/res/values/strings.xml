@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SLSA</string>
+    <string name="offline_title">You’re offline</string>
+    <string name="connection_error">The Sri Lanka Scrabble Academy website could not be reached. Check your connection and try again.</string>
+    <string name="security_error">The secure connection could not be verified. The page was not opened.</string>
+    <string name="retry">Try again</string>
+    <string name="no_app_available">No app is available to open this link.</string>
+</resources>
