@@ -19,9 +19,17 @@
     <nav id="site-nav" aria-label="Main navigation">
       <a href="#about">About</a><a href="#programmes">Programmes</a><a href="#events">Events</a>
       <a href="#membership">Membership</a><a href="#contact">Contact</a>
-      <button class="nav-action" type="button" data-modal="registration-modal">Register</button>
+      <button class="nav-action nav-register" type="button" data-modal="registration-modal">Register now</button>
     </nav>
   </header>
+
+  <aside class="fiesta-spotlight" aria-labelledby="fiesta-spotlight-title">
+    <div class="fiesta-spotlight-copy">
+      <span class="live-badge">Registrations open</span>
+      <div><strong id="fiesta-spotlight-title">Colombo Scrabble Fiesta 2026</strong><small>Choose your category and secure your place.</small></div>
+    </div>
+    <button class="spotlight-button" type="button" data-modal="registration-modal">Register for the tournament</button>
+  </aside>
 
   <main id="main">
     <section class="hero" id="home">
@@ -85,7 +93,7 @@
     <p class="copyright">© 2026 Sri Lanka Scrabble Academy. All rights reserved.</p>
   </footer>
 
-  <dialog id="registration-modal" aria-labelledby="registration-title"><button class="close" type="button" aria-label="Close">×</button><p class="eyebrow dark">Tournament & programme portal</p><h2 id="registration-title">Register your interest</h2><form data-success="Thank you. Your registration details are ready to be sent to the Academy."><label>Player name<input name="name" autocomplete="name" required></label><div class="form-row"><label>Age category<select name="category" required><option value="">Choose category</option><option>Under 12</option><option>Under 15</option><option>Under 20</option><option>Open / Adult</option></select></label><label>Programme<select name="programme" required><option value="">Choose programme</option><option>Beginner coaching</option><option>School programme</option><option>Competitive coaching</option><option>Tournament registration</option></select></label></div><label>Phone number<input name="phone" type="tel" autocomplete="tel" required></label><button class="button primary full" type="submit">Submit details</button><p class="form-note">Submitting opens WhatsApp with your details. Nothing is stored on this website.</p></form></dialog>
+  <dialog id="registration-modal" class="registration-modal" aria-labelledby="registration-title"><button class="close" type="button" aria-label="Close">×</button><p class="eyebrow dark">Registrations open</p><h2 id="registration-title">Tournament registration</h2><section class="modal-fiesta" aria-labelledby="modal-fiesta-title"><span>Featured tournament</span><h3 id="modal-fiesta-title">Colombo Scrabble Fiesta 2026</h3><p>Select your playing category to open the official registration form.</p><div class="modal-registration-buttons"><a href="https://docs.google.com/forms/d/1aQtL_iXCKn33tD5I2S_vRmhM7-EYOS629CfyRYJq3mg/viewform" target="_blank" rel="noopener">Under 13</a><a href="https://docs.google.com/forms/d/1s1wn-cYgbnjsoiqDcgXYUcOHghTPauC15KzqKUTjI1U/viewform" target="_blank" rel="noopener">Championship</a><a href="https://docs.google.com/forms/d/1O6NrtJrqMNe3uE__Wok3sl97kRHEKyVORuJg6KEsFg0/viewform" target="_blank" rel="noopener">Plate &amp; Newbies</a></div><a class="modal-event-link" href="https://prop4life.github.io/colombo-scrabble-fiesta-2026/" target="_blank" rel="noopener">View tournament website →</a></section><div class="modal-divider"><span>Other SLSA programmes</span></div><form data-success="Thank you. Your registration details are ready to be sent to the Academy."><label>Player name<input name="name" autocomplete="name" required></label><div class="form-row"><label>Age category<select name="category" required><option value="">Choose category</option><option>Under 12</option><option>Under 15</option><option>Under 20</option><option>Open / Adult</option></select></label><label>Programme<select name="programme" required><option value="">Choose programme</option><option>Beginner coaching</option><option>School programme</option><option>Competitive coaching</option><option>Tournament registration</option></select></label></div><label>Phone number<input name="phone" type="tel" autocomplete="tel" required></label><button class="button primary full" type="submit">Submit details</button><p class="form-note">Submitting opens WhatsApp with your details. Nothing is stored on this website.</p></form></dialog>
 
   <dialog id="membership-modal" aria-labelledby="membership-title"><button class="close" type="button" aria-label="Close">×</button><p class="eyebrow dark">Academy membership</p><h2 id="membership-title">Join SLSA</h2><form data-success="Thank you. Your membership request is ready to be sent to the Academy."><label>Full name<input name="name" autocomplete="name" required></label><div class="form-row"><label>Preferred hub<select name="hub" required><option>Colombo</option><option>Kelaniya</option><option>Kandy</option><option>Other / Outstation</option></select></label><label>WESPA rating (optional)<input name="rating" inputmode="numeric"></label></div><label>Phone number<input name="phone" type="tel" autocomplete="tel" required></label><button class="button primary full" type="submit">Send membership request</button><p class="form-note">Submitting opens WhatsApp with your details. Nothing is stored on this website.</p></form></dialog>
 
