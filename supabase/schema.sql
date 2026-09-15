@@ -1,0 +1,16 @@
+create extension if not exists pgcrypto;
+create table public.admins(user_id uuid primary key references auth.users(id) on delete cascade);
+create table public.events(id uuid primary key default gen_random_uuid(),name text not null,event_date date,description text default '',cover_url text,published boolean not null default false,created_at timestamptz default now());
+create table public.photos(id uuid primary key default gen_random_uuid(),event_id uuid not null references public.events(id) on delete cascade,storage_path text not null unique,image_url text not null,caption text default '',sort_order int default 0,created_at timestamptz default now());
+create or replace function public.is_admin() returns boolean language sql stable security definer set search_path=public as $$select exists(select 1 from public.admins where user_id=auth.uid())$$;
+alter table public.admins enable row level security;alter table public.events enable row level security;alter table public.photos enable row level security;
+create policy "admins read" on public.admins for select using(public.is_admin());
+create policy "public events" on public.events for select using(published or public.is_admin());
+create policy "admin events" on public.events for all using(public.is_admin()) with check(public.is_admin());
+create policy "public photos" on public.photos for select using(exists(select 1 from public.events e where e.id=event_id and(e.published or public.is_admin())));
+create policy "admin photos" on public.photos for all using(public.is_admin()) with check(public.is_admin());
+insert into storage.buckets(id,name,public,file_size_limit,allowed_mime_types) values('event-photos','event-photos',true,10485760,array['image/jpeg','image/png','image/webp']) on conflict(id) do update set public=true;
+create policy "read event photos" on storage.objects for select using(bucket_id='event-photos');
+create policy "upload event photos" on storage.objects for insert with check(bucket_id='event-photos' and public.is_admin());
+create policy "update event photos" on storage.objects for update using(bucket_id='event-photos' and public.is_admin());
+create policy "delete event photos" on storage.objects for delete using(bucket_id='event-photos' and public.is_admin());
