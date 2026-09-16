@@ -24,7 +24,11 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
     private static final String HOME_URL =
             "https://prop4life.github.io/srilankascrabbleacademy/";
+    private static final String EVENTS_URL = HOME_URL + "#events";
+    private static final String JOIN_URL = HOME_URL + "#membership";
+    private static final String PRIVACY_URL = HOME_URL + "privacy.html";
     private static final String ALLOWED_HOST = "prop4life.github.io";
+    private static final String ALLOWED_PATH_PREFIX = "/srilankascrabbleacademy/";
 
     private WebView webView;
     private ProgressBar progress;
@@ -41,9 +45,19 @@ public class MainActivity extends Activity {
         errorPanel = findViewById(R.id.error_panel);
         errorMessage = findViewById(R.id.error_message);
         Button retry = findViewById(R.id.retry_button);
+        Button home = findViewById(R.id.home_button);
+        Button events = findViewById(R.id.events_button);
+        Button join = findViewById(R.id.join_button);
+        Button privacy = findViewById(R.id.privacy_button);
+        Button share = findViewById(R.id.share_button);
 
         configureWebView();
         retry.setOnClickListener(v -> loadHome());
+        home.setOnClickListener(v -> loadUrl(HOME_URL));
+        events.setOnClickListener(v -> loadUrl(EVENTS_URL));
+        join.setOnClickListener(v -> loadUrl(JOIN_URL));
+        privacy.setOnClickListener(v -> loadUrl(PRIVACY_URL));
+        share.setOnClickListener(v -> shareAcademy());
 
         if (state == null) {
             loadHome();
@@ -61,8 +75,10 @@ public class MainActivity extends Activity {
         settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
         settings.setBuiltInZoomControls(false);
         settings.setDisplayZoomControls(false);
+        settings.setMediaPlaybackRequiresUserGesture(true);
 
         CookieManager.getInstance().setAcceptCookie(true);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(webView, false);
         WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
 
         webView.setWebChromeClient(new WebChromeClient() {
@@ -81,13 +97,13 @@ public class MainActivity extends Activity {
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                Uri uri = request.getUrl();
-                if ("https".equalsIgnoreCase(uri.getScheme())
-                        && ALLOWED_HOST.equalsIgnoreCase(uri.getHost())) {
-                    return false;
-                }
-                openExternal(uri);
-                return true;
+                return handleNavigation(request.getUrl());
+            }
+
+            @SuppressWarnings("deprecation")
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return handleNavigation(Uri.parse(url));
             }
 
             @Override
@@ -112,8 +128,12 @@ public class MainActivity extends Activity {
     }
 
     private void loadHome() {
+        loadUrl(HOME_URL);
+    }
+
+    private void loadUrl(String url) {
         showWebsite();
-        webView.loadUrl(HOME_URL);
+        webView.loadUrl(url);
     }
 
     private void showWebsite() {
@@ -129,11 +149,42 @@ public class MainActivity extends Activity {
     }
 
     private void openExternal(Uri uri) {
+        String scheme = uri.getScheme();
+        if (scheme == null || !(scheme.equalsIgnoreCase("https")
+                || scheme.equalsIgnoreCase("http")
+                || scheme.equalsIgnoreCase("tel")
+                || scheme.equalsIgnoreCase("mailto")
+                || scheme.equalsIgnoreCase("sms")
+                || scheme.equalsIgnoreCase("smsto"))) {
+            Toast.makeText(this, R.string.no_app_available, Toast.LENGTH_SHORT).show();
+            return;
+        }
         try {
             startActivity(new Intent(Intent.ACTION_VIEW, uri));
         } catch (ActivityNotFoundException exception) {
             Toast.makeText(this, R.string.no_app_available, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private boolean handleNavigation(Uri uri) {
+        String path = uri.getPath();
+        boolean isAcademyPage = "https".equalsIgnoreCase(uri.getScheme())
+                && ALLOWED_HOST.equalsIgnoreCase(uri.getHost())
+                && path != null
+                && path.startsWith(ALLOWED_PATH_PREFIX);
+        if (isAcademyPage) {
+            return false;
+        }
+        openExternal(uri);
+        return true;
+    }
+
+    private void shareAcademy() {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_text, HOME_URL));
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_chooser)));
     }
 
     @Override
@@ -149,5 +200,23 @@ public class MainActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         webView.saveState(outState);
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onPause() {
+        webView.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        webView.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        webView.destroy();
+        super.onDestroy();
     }
 }

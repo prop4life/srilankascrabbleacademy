@@ -1,8 +1,17 @@
 <resources>
-    <string name="app_name">SLSA</string>
+    <string name="app_name">Sri Lanka Scrabble Academy</string>
+    <string name="app_description">Coaching, events, membership and Scrabble development from Sri Lanka Scrabble Academy.</string>
     <string name="offline_title">You’re offline</string>
     <string name="connection_error">The Sri Lanka Scrabble Academy website could not be reached. Check your connection and try again.</string>
     <string name="security_error">The secure connection could not be verified. The page was not opened.</string>
     <string name="retry">Try again</string>
     <string name="no_app_available">No app is available to open this link.</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_events">Events</string>
+    <string name="nav_join">Join</string>
+    <string name="nav_privacy">Privacy</string>
+    <string name="nav_share">Share</string>
+    <string name="share_subject">Sri Lanka Scrabble Academy</string>
+    <string name="share_text">Discover Scrabble coaching, programmes and events from Sri Lanka Scrabble Academy: %1$s</string>
+    <string name="share_chooser">Share Sri Lanka Scrabble Academy</string>
 </resources>

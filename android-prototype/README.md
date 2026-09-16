@@ -1,10 +1,10 @@
-# Sri Lanka Scrabble Academy Android prototype
+# Sri Lanka Scrabble Academy Android app
 
 A lightweight Android shell for the existing SLSA website:
 
 https://prop4life.github.io/srilankascrabbleacademy/
 
-## Prototype features
+## App features
 
 - Branded Android launcher and full-screen presentation
 - Secure HTTPS-only WebView
@@ -12,6 +12,8 @@ https://prop4life.github.io/srilankascrabbleacademy/
 - WhatsApp, telephone, email and unrelated web links open in their appropriate apps
 - Progress indicator and friendly connection-error screen
 - Back-button browser history
+- Native quick navigation for Home, Events, Membership and Privacy
+- Native Android sharing
 - SSL errors are never bypassed
 - Android 6.0+ support; target API 36
 
@@ -32,11 +34,13 @@ The debug APK will be written to:
 
 `app/build/outputs/apk/debug/app-debug.apk`
 
-## Before Google Play release
+## Google Play release
 
-Replace the prototype vector launcher with production SLSA artwork in all required densities,
-test on several phones and tablets, add a privacy-policy URL, create a signed release key,
-and upload an Android App Bundle generated with `:app:bundleRelease`.
+The production package ID is `lk.slsa.academy`, version 1.0.0 targets API 36, and the
+in-app Privacy button points to the public SLSA privacy-policy URL. Before uploading,
+create and securely retain an upload key, generate a signed Android App Bundle with
+`:app:bundleRelease`, and complete the Play Console declarations documented in
+`play-store/listing.md`.
 
 The app intentionally does not collect or store form data. The current website sends completed
 registration details through WhatsApp.

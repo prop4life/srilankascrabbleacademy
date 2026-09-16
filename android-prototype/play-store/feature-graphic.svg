@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#073f36"/>
+      <stop offset="1" stop-color="#0b5d4f"/>
+    </linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="1024" height="500" fill="url(#background)"/>
+  <rect width="1024" height="500" fill="url(#grid)"/>
+  <circle cx="925" cy="60" r="190" fill="#f5c84b" fill-opacity=".12"/>
+  <circle cx="70" cy="470" r="170" fill="#cfdf65" fill-opacity=".08"/>
+
+  <text x="72" y="110" fill="#f5c84b" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="4">OFFICIAL ANDROID APP</text>
+  <text x="72" y="177" fill="#ffffff" font-family="Georgia, serif" font-size="54" font-weight="700">Sri Lanka</text>
+  <text x="72" y="235" fill="#ffffff" font-family="Georgia, serif" font-size="54" font-weight="700">Scrabble Academy</text>
+  <text x="72" y="282" fill="#d9ebe7" font-family="Arial, Helvetica, sans-serif" font-size="23">Coaching • Events • Membership • Community</text>
+
+  <g transform="translate(72 330)">
+    <g transform="translate(0 0)"><rect width="72" height="72" rx="8" fill="#f2d690"/><text x="36" y="52" text-anchor="middle" fill="#092c27" font-family="Georgia, serif" font-size="48" font-weight="700">S</text><text x="62" y="63" fill="#092c27" font-family="Arial" font-size="12">1</text></g>
+    <g transform="translate(82 0)"><rect width="72" height="72" rx="8" fill="#f2d690"/><text x="36" y="52" text-anchor="middle" fill="#092c27" font-family="Georgia, serif" font-size="48" font-weight="700">L</text><text x="62" y="63" fill="#092c27" font-family="Arial" font-size="12">1</text></g>
+    <g transform="translate(164 0)"><rect width="72" height="72" rx="8" fill="#f2d690"/><text x="36" y="52" text-anchor="middle" fill="#092c27" font-family="Georgia, serif" font-size="48" font-weight="700">S</text><text x="62" y="63" fill="#092c27" font-family="Arial" font-size="12">1</text></g>
+    <g transform="translate(246 0)"><rect width="72" height="72" rx="8" fill="#f2d690"/><text x="36" y="52" text-anchor="middle" fill="#092c27" font-family="Georgia, serif" font-size="48" font-weight="700">A</text><text x="62" y="63" fill="#092c27" font-family="Arial" font-size="12">1</text></g>
+  </g>
+
+  <g>
+    <rect x="660" y="54" width="310" height="392" rx="34" fill="#fff9e9"/>
+    <image x="685" y="79" width="260" height="260" xlink:href="../../slsa-logo.jpg" preserveAspectRatio="xMidYMid meet"/>
+    <text x="815" y="379" text-anchor="middle" fill="#073f36" font-family="Georgia, serif" font-size="25" font-weight="700">Build words.</text>
+    <text x="815" y="413" text-anchor="middle" fill="#a6382f" font-family="Georgia, serif" font-size="25" font-weight="700">Shape minds.</text>
+  </g>
+</svg>
