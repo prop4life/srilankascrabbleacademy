@@ -53,3 +53,40 @@
 .privacy-updated{padding-bottom:1.25rem;border-bottom:1px solid #d7dfdc;color:#61736e;font-size:.9rem}
 .privacy-contact{padding:1.25rem;border-left:5px solid var(--gold);border-radius:.4rem;background:var(--cream)}
 @media(max-width:520px){.privacy-header{align-items:flex-start}.privacy-header .brand span{display:none}.privacy-back{font-size:.82rem}.privacy-content{margin:1rem;border-radius:.8rem}}
+
+/* Colombo Scrabble Fiesta 2026 */
+.spotlight-button{text-decoration:none;text-align:center}
+.fiesta-feature{display:grid;grid-template-columns:minmax(260px,390px) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);margin-bottom:3.5rem;padding:clamp(1rem,2.5vw,2rem);border:1px solid rgba(245,200,75,.42);border-radius:1.5rem;background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.035));box-shadow:0 28px 65px rgba(0,0,0,.2)}
+.fiesta-poster{align-self:start;display:block;position:relative;overflow:hidden;border-radius:1rem;background:#fff;color:var(--ink);text-decoration:none;box-shadow:0 20px 45px rgba(0,0,0,.3)}
+.fiesta-poster img{display:block;width:100%;height:auto}
+.fiesta-poster span{display:block;padding:.75rem 1rem;background:var(--gold);font-size:.82rem;font-weight:900;text-align:center;text-transform:uppercase;letter-spacing:.08em}
+.fiesta-poster:hover span,.fiesta-poster:focus-visible span{background:#ffe084}
+.fiesta-poster:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.fiesta-details{min-width:0;padding-block:.25rem}
+.fiesta-kicker{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1rem}
+.fiesta-kicker span{padding:.32rem .65rem;border-radius:999px;background:var(--gold);color:var(--ink);font-size:.69rem;font-weight:900;text-transform:uppercase;letter-spacing:.07em}
+.fiesta-kicker span+span{background:var(--red);color:#fff}
+.fiesta-details h3{max-width:760px;margin:0 0 1rem;font:700 clamp(2.2rem,5vw,4.4rem)/.98 Georgia,serif;letter-spacing:-.04em}
+.fiesta-lead{max-width:780px;color:#d6e8e3;font-size:1.07rem}
+.fiesta-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:1.5rem 0}
+.fiesta-facts div{padding:1rem;border-radius:.8rem;background:rgba(255,255,255,.08);border-top:3px solid var(--gold)}
+.fiesta-facts dt{color:#a8cdc4;font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
+.fiesta-facts dd{margin:.28rem 0 0;color:#fff;font-weight:800;line-height:1.35}
+.fiesta-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:1.5rem 0}
+.fiesta-categories section{padding:1rem;border-radius:.8rem;background:var(--cream);color:var(--ink)}
+.fiesta-categories span,.fiesta-categories strong{display:block}
+.fiesta-categories span{color:var(--red);font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.fiesta-categories strong{margin:.25rem 0;font:700 1.15rem Georgia,serif}
+.fiesta-categories p{margin:0;color:#45615b;font-size:.82rem;line-height:1.4}
+.fiesta-highlights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem 1.25rem;margin:1.5rem 0;padding:0;list-style:none}
+.fiesta-highlights li{position:relative;padding-left:1.4rem;color:#e7f0ed}
+.fiesta-highlights li::before{content:"★";position:absolute;left:0;color:var(--gold)}
+.fiesta-cta{margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.2)}
+.fiesta-cta>p{margin-bottom:.8rem;color:#fff;font-weight:900}
+.fiesta-cta .registration-buttons a{flex:1;min-width:180px}
+.fiesta-tagline{margin:1.5rem 0 .2rem;color:var(--gold);font:700 1.35rem Georgia,serif;text-transform:uppercase;letter-spacing:.08em}
+.fiesta-note{display:block;color:#9fbdb6;font-size:.72rem}
+.event-list{margin-top:1rem}
+@media(max-width:1050px){.fiesta-feature{grid-template-columns:minmax(220px,320px) minmax(0,1fr)}.fiesta-facts,.fiesta-categories{grid-template-columns:1fr}.fiesta-highlights{grid-template-columns:1fr}}
+@media(max-width:750px){.fiesta-feature{grid-template-columns:1fr}.fiesta-poster{width:min(100%,440px);margin-inline:auto}.fiesta-details h3{font-size:clamp(2.2rem,11vw,3.6rem)}}
+@media(max-width:520px){.fiesta-feature{padding:.8rem;border-radius:1rem}.fiesta-details{padding:.55rem}.fiesta-kicker{align-items:flex-start;flex-direction:column}.fiesta-cta .registration-buttons{display:grid}.fiesta-cta .registration-buttons a{min-width:0}.fiesta-tagline{font-size:1.1rem}.fiesta-facts dd{font-size:.92rem}}
