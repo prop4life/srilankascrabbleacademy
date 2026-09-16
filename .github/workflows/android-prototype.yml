@@ -3373,7 +3373,7 @@ jobs:
           tar -xzf "$RUNNER_TEMP/android-release-files.tar.gz" -C "$GITHUB_WORKSPACE"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/workflows/android-prototype.yml .github/workflows/pages.yml android-prototype
+          git add android-prototype
           git commit -m "Prepare Android app for Google Play release"
           git push origin HEAD:android-prototype
 
