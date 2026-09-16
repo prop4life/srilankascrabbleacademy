@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prop4life.github.io/srilankascrabbleacademy/sitemap.xml
