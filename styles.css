@@ -7,3 +7,29 @@
 /* Official SLSA identity and Scrabble-board detailing */
 .brand-logo{width:54px;height:54px;border-radius:.55rem;object-fit:cover;background:#fff}.hero{background:linear-gradient(rgba(7,63,54,.92),rgba(7,63,54,.97)),repeating-linear-gradient(0deg,transparent 0 51px,rgba(255,255,255,.13) 52px),repeating-linear-gradient(90deg,transparent 0 51px,rgba(255,255,255,.13) 52px),var(--green)}.board-art{display:grid;grid-template-columns:1fr;justify-items:center;transform:rotate(-2deg)}.logo-stage{width:min(360px,80vw);padding:.75rem;background:var(--cream);border:10px solid #ddcda8;border-radius:1.6rem;box-shadow:0 32px 70px rgba(0,0,0,.33)}.logo-stage img{display:block;width:100%;border-radius:.9rem}.tile-rack{display:grid;grid-template-columns:repeat(4,clamp(58px,6vw,82px));margin-top:-1.5rem;padding:.5rem .65rem 1rem;background:#8b5b2e;border-radius:.45rem;box-shadow:0 16px 30px rgba(0,0,0,.3)}.tile-rack .tile{font-size:clamp(1.8rem,4vw,3.3rem)}.word-rack{display:flex;justify-content:center;gap:.32rem;padding:0 1rem 3rem;overflow:hidden}.word-rack span{width:clamp(36px,6vw,64px);aspect-ratio:1;display:grid;place-items:center;background:linear-gradient(145deg,#fff1b7,#d8b76d);border-radius:.32rem;box-shadow:inset -3px -3px 0 rgba(111,70,15,.16),0 6px 12px rgba(9,44,39,.15);font:700 clamp(1.3rem,3vw,2.2rem) Georgia,serif;position:relative}.word-rack small{font:700 .55rem Arial;position:absolute;right:4px;bottom:2px}.programmes{background-image:radial-gradient(circle at 10% 12%,rgba(230,166,169,.3) 0 9px,transparent 10px),radial-gradient(circle at 91% 84%,rgba(21,149,189,.24) 0 12px,transparent 13px)}.footer-logo{width:82px;height:82px;object-fit:cover;border-radius:.65rem;background:#fff}footer address{font-style:normal;display:grid;gap:.45rem}footer address p{margin:0}footer address a{width:max-content}footer address span{color:#d0e1dc;line-height:1.45}
 @media(max-width:520px){.brand-logo{width:46px;height:46px}.logo-stage{width:min(310px,86vw)}.word-rack{gap:.18rem}.word-rack span{width:11vw}.tile-rack{grid-template-columns:repeat(4,58px)}}
+
+/* Social media hub */
+.social-section{background:linear-gradient(135deg,#fff9e9,#f4f0e6)}
+.social-heading{text-align:center;max-width:720px;margin:0 auto 2.5rem}
+.social-heading .eyebrow{margin-bottom:.7rem}
+.social-heading h2{margin-bottom:1rem}
+.social-heading>p:last-child{font-size:1.06rem;color:#45615b}
+.social-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.social-card{min-height:160px;padding:1.35rem;border:1px solid rgba(9,44,39,.09);border-radius:1.1rem;background:#fff;box-shadow:0 12px 30px rgba(9,44,39,.09);display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:.9rem;text-decoration:none;position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.social-card::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--social-color)}
+.social-card:hover,.social-card:focus-visible{transform:translateY(-5px);box-shadow:0 20px 40px rgba(9,44,39,.16)}
+.social-card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.social-icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--social-color);color:#fff}
+.social-icon svg{width:27px;height:27px;fill:currentColor}
+.social-card strong,.social-card small{display:block}
+.social-card strong{font-size:1.08rem}
+.social-card small{margin-top:.18rem;color:#61736e;font-size:.72rem;overflow-wrap:anywhere}
+.social-arrow{font-size:1.25rem;color:var(--social-color);font-weight:800}
+.facebook{--social-color:#1877f2}
+.youtube{--social-color:#f00}
+.instagram{--social-color:#c13584}
+.instagram .social-icon{background:linear-gradient(135deg,#feda75,#d62976 52%,#4f5bd5)}
+.tiktok{--social-color:#111}
+.tiktok .social-icon{box-shadow:-3px 0 #25f4ee,3px 0 #fe2c55}
+@media(max-width:1100px){.social-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.social-links{grid-template-columns:1fr}.social-card{min-height:120px}}
