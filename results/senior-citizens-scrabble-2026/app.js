@@ -69,6 +69,150 @@ function makeProfileLink(cell, category) {
   return `<a class="player-link" href="player.html?event=${encodeURIComponent(category)}&id=${encodeURIComponent(player.id)}">${escapeHtml(label)}</a>`;
 }
 
+function normalisePairingText(value) {
+  return String(value ?? '').replace(/\s+/g, ' ').trim();
+}
+
+function parsePairingPlayer(value) {
+  const text = normalisePairingText(value).replace(/\s*[:.;]+\s*$/, '');
+  const match = text.match(/^(.*?)\s*\(\s*((?:[A-Z]|#)?\s*\d+)\s*\)\s*$/i);
+  const rawId = match ? match[2].replace(/\s+/g, '').toUpperCase() : '';
+  return {
+    name: normalisePairingText(match ? match[1] : text),
+    id: rawId,
+    profileId: rawId.replace(/[^0-9]/g, '')
+  };
+}
+
+function findPairingsTable(documentNode) {
+  const tables = [...documentNode.querySelectorAll('table')];
+  return documentNode.querySelector('table.pairings') || tables.find(table => {
+    const heading = normalisePairingText(table.querySelector('tr')?.textContent).toLowerCase();
+    return heading.includes('board') && (heading.includes('plays whom') || heading.includes('pairing'));
+  }) || null;
+}
+
+function parsePairings(html) {
+  const parsed = new DOMParser().parseFromString(html, 'text/html');
+  const table = findPairingsTable(parsed);
+  if (!table) throw new Error('No pairings table found');
+
+  const matches = [];
+  const byes = [];
+  for (const row of table.querySelectorAll('tr')) {
+    if (row.querySelector('th')) continue;
+    const cells = [...row.querySelectorAll('td')];
+    if (cells.length < 2) continue;
+
+    const board = normalisePairingText(cells[0].textContent);
+    const detail = cells[1];
+    const isBye = Boolean(detail.querySelector('.bye')) || /\bbye\b/i.test(detail.textContent);
+
+    if (isBye) {
+      const explicitName = normalisePairingText(detail.querySelector('span.name')?.textContent);
+      const explicitId = normalisePairingText(detail.querySelector('.id')?.textContent);
+      let player;
+      if (explicitName) {
+        player = parsePairingPlayer(explicitId ? `${explicitName} (${explicitId})` : explicitName);
+      } else {
+        const cleaned = detail.cloneNode(true);
+        cleaned.querySelectorAll('.bye').forEach(node => node.remove());
+        player = parsePairingPlayer(normalisePairingText(cleaned.textContent));
+      }
+      if (player.name) byes.push(player);
+      continue;
+    }
+
+    const markerText = normalisePairingText(detail.querySelector('.starts')?.textContent).toLowerCase();
+    const marker = markerText.includes('first') ? 'starts' : markerText.includes('draw') ? 'draws' : '';
+    const repeat = Boolean(detail.querySelector('.repeat')) || /\brepeat\b/i.test(detail.textContent);
+    const cleaned = detail.cloneNode(true);
+    cleaned.querySelectorAll('.starts, .repeat').forEach(node => node.remove());
+    const players = normalisePairingText(cleaned.textContent).split(/\s+vs\.?\s+/i);
+    if (!board || players.length !== 2) continue;
+
+    const first = parsePairingPlayer(players[0]);
+    const second = parsePairingPlayer(players[1]);
+    if (!first.name || !second.name) continue;
+    matches.push({ board, first, second, marker, repeat });
+  }
+
+  if (!matches.length && !byes.length) throw new Error('No pairings rows found');
+  return { matches, byes };
+}
+
+function pairingPlayerMarkup(player, category, marker = '') {
+  const markerLabel = marker === 'starts' ? 'Starts first' : marker === 'draws' ? 'Draws for start' : '';
+  const profileLink = player.profileId
+    ? `<a class="pairing-player-name" href="player.html?event=${encodeURIComponent(category)}&id=${encodeURIComponent(player.profileId)}" title="View ${escapeHtml(player.name)}’s player profile">${escapeHtml(player.name)}</a>`
+    : `<span class="pairing-player-name">${escapeHtml(player.name)}</span>`;
+  return `
+    <div class="pairing-player${marker ? ` is-${marker}` : ''}">
+      ${profileLink}
+      ${player.id ? `<span class="pairing-player-id">${escapeHtml(player.id)}</span>` : ''}
+      ${markerLabel ? `<span class="pairing-marker ${marker}">${markerLabel}</span>` : ''}
+    </div>`;
+}
+
+function renderPairings(pairings, category, round) {
+  const { matches, byes } = pairings;
+  const hasStarts = matches.some(match => match.marker === 'starts');
+  const hasDraws = matches.some(match => match.marker === 'draws');
+  const hasRepeats = matches.some(match => match.repeat);
+  const legends = [
+    hasStarts ? '<span><span class="pairing-marker starts">Starts first</span> makes the first move</span>' : '',
+    hasDraws ? '<span><span class="pairing-marker draws">Draws for start</span> draws to decide the first move</span>' : '',
+    hasRepeats ? '<span><span class="repeat-tag">Repeat pairing</span> met in an earlier round</span>' : ''
+  ].filter(Boolean);
+
+  const byeMarkup = byes.length ? `
+    <section class="bye-section" aria-labelledby="bye-heading">
+      <h3 id="bye-heading">Round ${round} ${byes.length === 1 ? 'bye' : 'byes'}</h3>
+      <div class="bye-list">
+        ${byes.map(player => `
+          <article class="bye-card">
+            <span class="bye-badge" aria-hidden="true">BYE</span>
+            <div>
+              ${pairingPlayerMarkup(player, category)}
+              <p>No game this round</p>
+            </div>
+          </article>`).join('')}
+      </div>
+    </section>` : '';
+
+  const cards = matches.map(match => `
+    <article class="pairing-card" role="listitem">
+      <div class="pairing-card-top">
+        <div class="board-tile" aria-label="Board ${escapeHtml(match.board)}">
+          <span>Board</span>
+          <strong>${escapeHtml(match.board)}</strong>
+        </div>
+        ${match.repeat ? '<span class="repeat-tag">Repeat pairing</span>' : ''}
+      </div>
+      <div class="pairing-matchup">
+        ${pairingPlayerMarkup(match.first, category, match.marker)}
+        <span class="versus-badge" aria-label="versus">VS</span>
+        ${pairingPlayerMarkup(match.second, category)}
+      </div>
+    </article>`).join('');
+
+  return `
+    <div class="pairings-overview">
+      <div>
+        <p class="pairings-kicker">Round ${round} seating</p>
+        <h2>Find your board</h2>
+        <p>Check your board number and opponent before play begins.</p>
+      </div>
+      <div class="pairing-totals" aria-label="Round summary">
+        <span><strong>${matches.length}</strong>${matches.length === 1 ? 'Board' : 'Boards'}</span>
+        ${byes.length ? `<span><strong>${byes.length}</strong>${byes.length === 1 ? 'Bye' : 'Byes'}</span>` : ''}
+      </div>
+    </div>
+    ${legends.length ? `<div class="pairings-legend"><strong>Pairing key</strong>${legends.join('')}</div>` : ''}
+    ${byeMarkup}
+    <div class="pairings-grid" role="list">${cards}</div>`;
+}
+
 async function renderCategory() {
   const event = currentEvent();
   const key = eventKey();
@@ -117,15 +261,12 @@ async function renderViewer() {
   document.getElementById('category-kicker').textContent = event.name;
   document.getElementById('viewer-title').textContent = `Round ${round} ${typeLabel}`;
   const view = document.getElementById('result-view');
+  view.classList.toggle('pairings-panel', type === 'pairings');
 
   try {
     const html = await fetchText(path);
     if (type === 'pairings') {
-      const frame = document.createElement('iframe');
-      frame.className = 'embedded-pairings';
-      frame.title = `${event.name} Round ${round} pairings`;
-      frame.srcdoc = html;
-      view.replaceChildren(frame);
+      view.innerHTML = renderPairings(parsePairings(html), key, round);
     } else {
       const parsed = new DOMParser().parseFromString(html, 'text/html');
       const sourceTable = findStandingsTable(parsed);
