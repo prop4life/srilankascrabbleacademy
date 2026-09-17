@@ -78,8 +78,8 @@ async function renderCategory() {
   document.getElementById('profiles-link').href = `players.html?event=${encodeURIComponent(key)}`;
 
   const rounds = document.getElementById('rounds');
-  const cards = [];
-  for (let round = 1; round <= event.rounds; round += 1) {
+  const cards = await Promise.all(Array.from({ length: event.rounds }, async (_, index) => {
+    const round = index + 1;
     const [pairings, standings] = await Promise.all([
       publishedPath(event, round, 'pairings'),
       publishedPath(event, round, 'standings')
@@ -87,7 +87,7 @@ async function renderCategory() {
     const resultLink = (type, path) => path
       ? `<a class="result-button live" href="viewer.html?event=${encodeURIComponent(key)}&round=${round}&type=${type}">View ${type === 'pairings' ? 'Pairings' : 'Standings'}</a>`
       : `<span class="result-button" aria-disabled="true">${type === 'pairings' ? 'Pairings' : 'Standings'} · Awaiting</span>`;
-    cards.push(`
+    return `
       <article class="round-card">
         <div class="round-tile" aria-hidden="true">${round}</div>
         <div class="round-content">
@@ -97,8 +97,8 @@ async function renderCategory() {
             ${resultLink('standings', standings)}
           </div>
         </div>
-      </article>`);
-  }
+      </article>`;
+  }));
   rounds.innerHTML = cards.join('');
   rounds.setAttribute('aria-busy', 'false');
 }
