@@ -1,15 +1,15 @@
 {
   "event": "championship",
-  "updated": "2026-09-17T17:44:50.352Z",
+  "updated": "2026-09-17T17:46:44.141Z",
   "players": {
     "1": {
       "id": "1",
       "name": "Violet Seneviratne",
-      "rank": 20,
-      "wins": 0,
+      "rank": 15,
+      "wins": 1,
       "losses": 2,
       "ties": 0,
-      "spread": -163,
+      "spread": -125,
       "games": [
         {
           "round": 1,
@@ -28,17 +28,26 @@
           "score": 319,
           "oppScore": 429,
           "spread": -110
+        },
+        {
+          "round": 3,
+          "opponentId": "13",
+          "opponentName": "Preethi Perera",
+          "result": "W",
+          "score": 353,
+          "oppScore": 315,
+          "spread": 38
         }
       ]
     },
     "2": {
       "id": "2",
       "name": "Doreen Sappideen",
-      "rank": 21,
+      "rank": 22,
       "wins": 0,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
-      "spread": -169,
+      "spread": -323,
       "games": [
         {
           "round": 1,
@@ -57,17 +66,26 @@
           "score": 325,
           "oppScore": 336,
           "spread": -11
+        },
+        {
+          "round": 3,
+          "opponentId": "8",
+          "opponentName": "Lalantha Amarasinghe",
+          "result": "L",
+          "score": 283,
+          "oppScore": 437,
+          "spread": -154
         }
       ]
     },
     "3": {
       "id": "3",
       "name": "Lakshman Cooray",
-      "rank": 8,
-      "wins": 1,
+      "rank": 6,
+      "wins": 2,
       "losses": 1,
       "ties": 0,
-      "spread": 45,
+      "spread": 101,
       "games": [
         {
           "round": 1,
@@ -86,17 +104,26 @@
           "score": 407,
           "oppScore": 410,
           "spread": -3
+        },
+        {
+          "round": 3,
+          "opponentId": "16",
+          "opponentName": "Janaki Galappatti",
+          "result": "W",
+          "score": 398,
+          "oppScore": 342,
+          "spread": 56
         }
       ]
     },
     "4": {
       "id": "4",
       "name": "Indramali Cooray",
-      "rank": 13,
-      "wins": 1,
+      "rank": 8,
+      "wins": 2,
       "losses": 1,
       "ties": 0,
-      "spread": -37,
+      "spread": 60,
       "games": [
         {
           "round": 1,
@@ -115,17 +142,26 @@
           "score": 336,
           "oppScore": 325,
           "spread": 11
+        },
+        {
+          "round": 3,
+          "opponentId": "21",
+          "opponentName": "Kareema Ahamed",
+          "result": "W",
+          "score": 421,
+          "oppScore": 324,
+          "spread": 97
         }
       ]
     },
     "5": {
       "id": "5",
       "name": "Priya Fernando",
-      "rank": 5,
+      "rank": 11,
       "wins": 2,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 32,
+      "spread": -34,
       "games": [
         {
           "round": 1,
@@ -144,17 +180,26 @@
           "score": 356,
           "oppScore": 336,
           "spread": 20
+        },
+        {
+          "round": 3,
+          "opponentId": "14",
+          "opponentName": "Shaila Amalean",
+          "result": "L",
+          "score": 378,
+          "oppScore": 444,
+          "spread": -66
         }
       ]
     },
     "6": {
       "id": "6",
       "name": "Percy Fernando",
-      "rank": 4,
+      "rank": 9,
       "wins": 2,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 165,
+      "spread": 48,
       "games": [
         {
           "round": 1,
@@ -173,17 +218,26 @@
           "score": 385,
           "oppScore": 346,
           "spread": 39
+        },
+        {
+          "round": 3,
+          "opponentId": "17",
+          "opponentName": "Kandhan Mahendran",
+          "result": "L",
+          "score": 314,
+          "oppScore": 431,
+          "spread": -117
         }
       ]
     },
     "7": {
       "id": "7",
       "name": "K.M.K. Kulatunge",
-      "rank": 6,
-      "wins": 1,
+      "rank": 4,
+      "wins": 2,
       "losses": 1,
       "ties": 0,
-      "spread": 159,
+      "spread": 189,
       "games": [
         {
           "round": 1,
@@ -202,17 +256,26 @@
           "score": 480,
           "oppScore": 276,
           "spread": 204
+        },
+        {
+          "round": 3,
+          "opponentId": "22",
+          "opponentName": "Kumari Goonesekere",
+          "result": "W",
+          "score": 432,
+          "oppScore": 402,
+          "spread": 30
         }
       ]
     },
     "8": {
       "id": "8",
       "name": "Lalantha Amarasinghe",
-      "rank": 22,
-      "wins": 0,
+      "rank": 10,
+      "wins": 1,
       "losses": 1,
       "ties": 0,
-      "spread": -170,
+      "spread": -15,
       "games": [
         {
           "round": 1,
@@ -222,17 +285,26 @@
           "score": 281,
           "oppScore": 451,
           "spread": -170
+        },
+        {
+          "round": 3,
+          "opponentId": "2",
+          "opponentName": "Doreen Sappideen",
+          "result": "W",
+          "score": 437,
+          "oppScore": 283,
+          "spread": 155
         }
       ]
     },
     "9": {
       "id": "9",
       "name": "Farida Akbarally",
-      "rank": 7,
-      "wins": 1,
+      "rank": 3,
+      "wins": 2,
       "losses": 1,
       "ties": 0,
-      "spread": 110,
+      "spread": 312,
       "games": [
         {
           "round": 1,
@@ -251,17 +323,26 @@
           "score": 432,
           "oppScore": 310,
           "spread": 122
+        },
+        {
+          "round": 3,
+          "opponentId": "20",
+          "opponentName": "Maulee Dias",
+          "result": "W",
+          "score": 461,
+          "oppScore": 259,
+          "spread": 202
         }
       ]
     },
     "10": {
       "id": "10",
       "name": "Malini Gunasekera",
-      "rank": 14,
-      "wins": 1,
+      "rank": 12,
+      "wins": 2,
       "losses": 1,
       "ties": 0,
-      "spread": -68,
+      "spread": -55,
       "games": [
         {
           "round": 1,
@@ -280,6 +361,15 @@
           "score": 310,
           "oppScore": 432,
           "spread": -122
+        },
+        {
+          "round": 3,
+          "opponentId": "15",
+          "opponentName": "Anil Wickramasingha",
+          "result": "W",
+          "score": 134,
+          "oppScore": 121,
+          "spread": 13
         }
       ]
     },
@@ -315,11 +405,11 @@
     "13": {
       "id": "13",
       "name": "Preethi Perera",
-      "rank": 18,
+      "rank": 20,
       "wins": 0,
-      "losses": 2,
+      "losses": 3,
       "ties": 0,
-      "spread": -95,
+      "spread": -133,
       "games": [
         {
           "round": 1,
@@ -338,6 +428,15 @@
           "score": 310,
           "oppScore": 351,
           "spread": -41
+        },
+        {
+          "round": 3,
+          "opponentId": "1",
+          "opponentName": "Violet Seneviratne",
+          "result": "L",
+          "score": 315,
+          "oppScore": 353,
+          "spread": -38
         }
       ]
     },
@@ -345,10 +444,10 @@
       "id": "14",
       "name": "Shaila Amalean",
       "rank": 2,
-      "wins": 2,
+      "wins": 3,
       "losses": 0,
       "ties": 0,
-      "spread": 312,
+      "spread": 378,
       "games": [
         {
           "round": 1,
@@ -367,17 +466,26 @@
           "score": 497,
           "oppScore": 330,
           "spread": 167
+        },
+        {
+          "round": 3,
+          "opponentId": "5",
+          "opponentName": "Priya Fernando",
+          "result": "W",
+          "score": 444,
+          "oppScore": 378,
+          "spread": 66
         }
       ]
     },
     "15": {
       "id": "15",
       "name": "Anil Wickramasingha",
-      "rank": 9,
+      "rank": 13,
       "wins": 1,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": 28,
+      "spread": 15,
       "games": [
         {
           "round": 1,
@@ -396,17 +504,26 @@
           "score": 351,
           "oppScore": 310,
           "spread": 41
+        },
+        {
+          "round": 3,
+          "opponentId": "10",
+          "opponentName": "Malini Gunasekera",
+          "result": "L",
+          "score": 121,
+          "oppScore": 134,
+          "spread": -13
         }
       ]
     },
     "16": {
       "id": "16",
       "name": "Janaki Galappatti",
-      "rank": 12,
+      "rank": 14,
       "wins": 1,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -35,
+      "spread": -91,
       "games": [
         {
           "round": 1,
@@ -425,6 +542,15 @@
           "score": 429,
           "oppScore": 319,
           "spread": 110
+        },
+        {
+          "round": 3,
+          "opponentId": "3",
+          "opponentName": "Lakshman Cooray",
+          "result": "L",
+          "score": 342,
+          "oppScore": 398,
+          "spread": -56
         }
       ]
     },
@@ -432,10 +558,10 @@
       "id": "17",
       "name": "Kandhan Mahendran",
       "rank": 1,
-      "wins": 2,
+      "wins": 3,
       "losses": 0,
       "ties": 0,
-      "spread": 335,
+      "spread": 452,
       "games": [
         {
           "round": 1,
@@ -454,17 +580,26 @@
           "score": 486,
           "oppScore": 309,
           "spread": 177
+        },
+        {
+          "round": 3,
+          "opponentId": "6",
+          "opponentName": "Percy Fernando",
+          "result": "W",
+          "score": 431,
+          "oppScore": 314,
+          "spread": 117
         }
       ]
     },
     "18": {
       "id": "18",
       "name": "Russel de Zylwa",
-      "rank": 15,
+      "rank": 16,
       "wins": 1,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -124,
+      "spread": -217,
       "games": [
         {
           "round": 1,
@@ -483,17 +618,26 @@
           "score": 309,
           "oppScore": 486,
           "spread": -177
+        },
+        {
+          "round": 3,
+          "opponentId": "19",
+          "opponentName": "Bernadette Silva",
+          "result": "L",
+          "score": 296,
+          "oppScore": 389,
+          "spread": -93
         }
       ]
     },
     "19": {
       "id": "19",
       "name": "Bernadette Silva",
-      "rank": 10,
-      "wins": 1,
+      "rank": 7,
+      "wins": 2,
       "losses": 1,
       "ties": 0,
-      "spread": 6,
+      "spread": 99,
       "games": [
         {
           "round": 1,
@@ -512,17 +656,26 @@
           "score": 346,
           "oppScore": 385,
           "spread": -39
+        },
+        {
+          "round": 3,
+          "opponentId": "18",
+          "opponentName": "Russel de Zylwa",
+          "result": "W",
+          "score": 389,
+          "oppScore": 296,
+          "spread": 93
         }
       ]
     },
     "20": {
       "id": "20",
       "name": "Maulee Dias",
-      "rank": 11,
+      "rank": 17,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -19,
+      "spread": -221,
       "games": [
         {
           "round": 2,
@@ -532,17 +685,26 @@
           "score": 336,
           "oppScore": 356,
           "spread": -19
+        },
+        {
+          "round": 3,
+          "opponentId": "9",
+          "opponentName": "Farida Akbarally",
+          "result": "L",
+          "score": 259,
+          "oppScore": 461,
+          "spread": -202
         }
       ]
     },
     "21": {
       "id": "21",
       "name": "Kareema Ahamed",
-      "rank": 16,
+      "rank": 18,
       "wins": 1,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -154,
+      "spread": -251,
       "games": [
         {
           "round": 1,
@@ -561,17 +723,26 @@
           "score": 330,
           "oppScore": 497,
           "spread": -167
+        },
+        {
+          "round": 3,
+          "opponentId": "4",
+          "opponentName": "Indramali Cooray",
+          "result": "L",
+          "score": 324,
+          "oppScore": 421,
+          "spread": -97
         }
       ]
     },
     "22": {
       "id": "22",
       "name": "Kumari Goonesekere",
-      "rank": 3,
+      "rank": 5,
       "wins": 2,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 173,
+      "spread": 143,
       "games": [
         {
           "round": 1,
@@ -590,6 +761,15 @@
           "score": 410,
           "oppScore": 407,
           "spread": 3
+        },
+        {
+          "round": 3,
+          "opponentId": "7",
+          "opponentName": "K.M.K. Kulatunge",
+          "result": "L",
+          "score": 402,
+          "oppScore": 432,
+          "spread": -30
         }
       ]
     }
