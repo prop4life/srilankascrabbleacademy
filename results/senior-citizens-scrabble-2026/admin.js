@@ -51,7 +51,7 @@ function parseNumber(value) {
 
 function playerFromCell(cell) {
   const text = (cell?.textContent || '').replace(/\s+/g, ' ').trim();
-  const idMatch = text.match(/(?:#|A)\s*\d+/i);
+  const idMatch = text.match(/(?:#|[A-Z])\s*\d+/i);
   const id = cleanPlayerId(idMatch?.[0] || '');
   const namedNode = cell?.querySelector('.name');
   const name = namedNode
@@ -89,7 +89,7 @@ function parseStandings(html, roundNumber) {
       ? cells[lastGameIndex]
       : cells.find(cell => /(?:[WLT])\s*[: ]/.test(cell.textContent));
     const lastGame = lastGameCell?.textContent.replace(/\s+/g, ' ').trim() || '';
-    const match = lastGame.match(/(?:\?\s*)?(?:\d+\s*)?([WLT])\s*[: ]\s*(\d+)\s*[-−–—]\s*(\d+)\s*[: ]\s*(?:#|A)?\s*(\d+)/i);
+    const match = lastGame.match(/(?:\?\s*)?(?:\d+\s*)?([WLT])\s*[: ]\s*(\d+)\s*[-−–—]\s*(\d+)\s*[: ]\s*(?:#|[A-Z])?\s*(\d+)/i);
     let cumulativeSpread = spreadIndex >= 0 ? parseNumber(cells[spreadIndex]?.textContent) : null;
     if (cumulativeSpread === null) {
       const likelySpread = cells.find(cell => /^[+−-]\d+$/.test(cell.textContent.trim()));

@@ -43,7 +43,7 @@ async function publishedPath(event, round, type) {
 
 function playerFromCell(cell) {
   const text = (cell?.textContent || '').replace(/\s+/g, ' ').trim();
-  const idMatch = text.match(/(?:#|A)\s*\d+/i);
+  const idMatch = text.match(/(?:#|[A-Z])\s*\d+/i);
   const id = (idMatch?.[0] || '').replace(/[^0-9]/g, '');
   const namedNode = cell?.querySelector('.name');
   const name = namedNode
@@ -137,7 +137,7 @@ async function renderViewer() {
       for (const row of rows.slice(1)) {
         const cells = [...row.children];
         if (!cells.length) continue;
-        let playerIndex = cells.findIndex(cell => /(?:#|A)\s*\d+/i.test(cell.textContent));
+        let playerIndex = cells.findIndex(cell => /(?:#|[A-Z])\s*\d+/i.test(cell.textContent));
         if (playerIndex < 0) playerIndex = headers.findIndex(header => /player/i.test(header));
         markup += '<tr>' + cells.map((cell, index) => `<td>${index === playerIndex ? makeProfileLink(cell, key) : escapeHtml(cell.textContent.replace(/\s+/g, ' ').trim())}</td>`).join('') + '</tr>';
       }
