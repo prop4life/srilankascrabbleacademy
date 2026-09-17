@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4b1817">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tournament Update Centre · SLASC Scrabble 2026</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to update controls</a>
+  <header class="compact-header">
+    <div class="compact-inner">
+      <a class="brand-link" href="index.html" aria-label="Tournament results home">
+        <img src="assets/slasc-logo.webp" alt="" width="78" height="61">
+        <span><small>SLASC</small>Scrabble Tournament 2026</span>
+      </a>
+      <div class="mini-tiles" aria-hidden="true"><span>L<small>1</small></span><span>I<small>1</small></span><span>V<small>4</small></span><span>E<small>1</small></span></div>
+    </div>
+  </header>
+
+  <main class="page-shell inner-page admin-shell" id="main">
+    <nav class="toolbar"><a class="secondary-button" href="index.html"><span aria-hidden="true">←</span> Results home</a></nav>
+    <section class="page-title-block">
+      <p class="eyebrow">Authorized officials</p>
+      <h1>Tournament Update Centre</h1>
+      <p class="intro-copy">Upload the TSH pairings and standings file for the selected category and round.</p>
+    </section>
+
+    <section class="admin-panel">
+      <div class="form-grid">
+        <label>Category
+          <select id="event-select">
+            <option value="championship">Championship Category</option>
+            <option value="plate">Plate Category</option>
+          </select>
+        </label>
+        <label>Round
+          <select id="round-select"></select>
+        </label>
+      </div>
+
+      <label>GitHub access token
+        <input id="token-input" type="password" autocomplete="off" spellcheck="false" placeholder="Fine-grained token with Contents: Read and write">
+      </label>
+      <p class="field-help">The token stays only in this browser and is never added to the results website.</p>
+
+      <div class="upload-actions">
+        <button class="primary-button upload-button" id="pairings-button" type="button">Upload Pairings</button>
+        <button class="primary-button upload-button gold-button" id="standings-button" type="button">Upload Standings</button>
+      </div>
+      <input id="file-input" type="file" accept=".html,.htm,text/html" hidden>
+      <div id="status-message" class="status-message" role="status" aria-live="polite">Ready to publish.</div>
+    </section>
+
+    <aside class="admin-help">
+      <h2>Publishing order</h2>
+      <ol>
+        <li>Upload the round pairings before play begins.</li>
+        <li>Upload the round standings after all scores are entered.</li>
+        <li>If a correction is needed, upload the corrected file to the same category and round.</li>
+      </ol>
+    </aside>
+  </main>
+
+  <footer class="site-footer"><span>Sri Lanka Association of Senior Citizens</span></footer>
+  <script src="admin.js"></script>
+</body>
+</html>

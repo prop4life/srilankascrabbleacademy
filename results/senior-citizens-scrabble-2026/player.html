@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4b1817">
+  <title>Player Result · Senior Citizens Scrabble Tournament 2026</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to player result</a>
+  <header class="compact-header">
+    <div class="compact-inner">
+      <a class="brand-link" href="index.html" aria-label="Tournament results home">
+        <img src="assets/slasc-logo.webp" alt="" width="78" height="61">
+        <span><small>SLASC</small>Scrabble Tournament 2026</span>
+      </a>
+      <div class="mini-tiles" aria-hidden="true"><span>W<small>4</small></span><span>I<small>1</small></span><span>N<small>1</small></span></div>
+    </div>
+  </header>
+
+  <main class="page-shell inner-page" id="main">
+    <nav class="toolbar" aria-label="Player navigation">
+      <a class="secondary-button" id="players-link" href="players.html"><span aria-hidden="true">←</span> All players</a>
+      <a class="secondary-button" id="category-link" href="category.html">Category results</a>
+    </nav>
+    <div id="player-profile" aria-live="polite" aria-busy="true">
+      <div class="loading-card">Loading player profile…</div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><span>Sri Lanka Association of Senior Citizens</span></footer>
+  <script src="app.js"></script>
+  <script>renderPlayer();</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4b1817">
+  <title>Tournament Results · Senior Citizens Scrabble Tournament 2026</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to rounds</a>
+  <header class="compact-header">
+    <div class="compact-inner">
+      <a class="brand-link" href="index.html" aria-label="Tournament results home">
+        <img src="assets/slasc-logo.webp" alt="" width="78" height="61">
+        <span><small>SLASC</small>Scrabble Tournament 2026</span>
+      </a>
+      <div class="mini-tiles" aria-hidden="true"><span>P<small>3</small></span><span>L<small>1</small></span><span>A<small>1</small></span><span>Y<small>4</small></span></div>
+    </div>
+  </header>
+
+  <main class="page-shell inner-page" id="main">
+    <nav class="toolbar" aria-label="Results navigation">
+      <a class="secondary-button" href="index.html"><span aria-hidden="true">←</span> All categories</a>
+      <a class="primary-button" id="profiles-link" href="players.html">Player profiles</a>
+    </nav>
+
+    <section class="page-title-block">
+      <p class="eyebrow">25 October 2026 · Hilton Hotel Colombo</p>
+      <h1 id="category-title">Tournament Results</h1>
+      <p id="round-summary" class="intro-copy">Loading category…</p>
+    </section>
+
+    <div id="rounds" class="round-grid" aria-live="polite" aria-busy="true">
+      <div class="loading-card">Loading rounds…</div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><span>Sri Lanka Association of Senior Citizens</span></footer>
+  <script src="app.js"></script>
+  <script>renderCategory();</script>
+</body>
+</html>
