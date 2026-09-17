@@ -114,6 +114,7 @@ function parseStandings(html, roundNumber) {
 async function github(path, options = {}) {
   const token = tokenInput.value.trim();
   const response = await fetch(API_ROOT + path, {
+    cache: 'no-store',
     ...options,
     headers: {
       ...(options.headers || {}),
@@ -124,7 +125,11 @@ async function github(path, options = {}) {
     }
   });
   const payload = await response.json().catch(() => ({}));
-  if (!response.ok) throw new Error(payload.message || `GitHub error ${response.status}`);
+  if (!response.ok) {
+    const error = new Error(payload.message || `GitHub error ${response.status}`);
+    error.status = response.status;
+    throw error;
+  }
   return payload;
 }
 
@@ -139,20 +144,39 @@ async function readRepositoryFile(path) {
 }
 
 async function writeRepositoryFile(path, text, message) {
-  let existingSha;
-  try {
-    const existing = await github(`/contents/${encodeURIComponentPath(path)}?ref=${encodeURIComponent(BRANCH)}`);
-    existingSha = existing.sha;
-  } catch (error) {
-    if (!/not found/i.test(error.message)) throw error;
+  let lastError;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    let existing;
+    try {
+      existing = await github(`/contents/${encodeURIComponentPath(path)}?ref=${encodeURIComponent(BRANCH)}`);
+    } catch (error) {
+      if (!/not found/i.test(error.message)) throw error;
+    }
+
+    if (existing?.content && decodeBase64(existing.content) === text) {
+      return { ...existing, unchanged: true };
+    }
+
+    const body = {
+      message,
+      content: encodeBase64(text),
+      branch: BRANCH
+    };
+    if (existing?.sha) body.sha = existing.sha;
+
+    try {
+      return await github(`/contents/${encodeURIComponentPath(path)}`, {
+        method: 'PUT',
+        body: JSON.stringify(body)
+      });
+    } catch (error) {
+      lastError = error;
+      const versionConflict = error.status === 409 || /does not match|sha|conflict/i.test(error.message);
+      if (!versionConflict || attempt === 3) throw error;
+      await new Promise(resolve => setTimeout(resolve, attempt * 400));
+    }
   }
-  const body = {
-    message,
-    content: encodeBase64(text),
-    branch: BRANCH
-  };
-  if (existingSha) body.sha = existingSha;
-  return github(`/contents/${encodeURIComponentPath(path)}`, { method: 'PUT', body: JSON.stringify(body) });
+  throw lastError;
 }
 
 function encodeURIComponentPath(path) {
