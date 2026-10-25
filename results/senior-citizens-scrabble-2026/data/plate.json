@@ -1,15 +1,15 @@
 {
   "event": "plate",
-  "updated": "2026-10-25T06:01:05.115Z",
+  "updated": "2026-10-25T06:27:51.599Z",
   "players": {
     "1": {
       "id": "1",
       "name": "T. M. Saldin",
-      "rank": 10,
-      "wins": 1,
+      "rank": 1,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
-      "spread": 59,
+      "spread": 349,
       "games": [
         {
           "round": 1,
@@ -19,17 +19,26 @@
           "score": 378,
           "oppScore": 319,
           "spread": 59
+        },
+        {
+          "round": 2,
+          "opponentId": "27",
+          "opponentName": "Swarna Fernando",
+          "result": "W",
+          "score": 480,
+          "oppScore": 190,
+          "spread": 290
         }
       ]
     },
     "2": {
       "id": "2",
       "name": "T. Robin Saldin",
-      "rank": 20,
-      "wins": 0,
+      "rank": 18,
+      "wins": 1,
       "losses": 1,
       "ties": 0,
-      "spread": -64,
+      "spread": -57,
       "games": [
         {
           "round": 1,
@@ -39,17 +48,26 @@
           "score": 278,
           "oppScore": 342,
           "spread": -64
+        },
+        {
+          "round": 2,
+          "opponentId": "8",
+          "opponentName": "Indrani Atukorale",
+          "result": "W",
+          "score": 322,
+          "oppScore": 315,
+          "spread": 7
         }
       ]
     },
     "3": {
       "id": "3",
       "name": "Ranjit Galappatti",
-      "rank": 13,
-      "wins": 1,
+      "rank": 6,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
-      "spread": 14,
+      "spread": 80,
       "games": [
         {
           "round": 1,
@@ -59,17 +77,26 @@
           "score": 372,
           "oppScore": 358,
           "spread": 14
+        },
+        {
+          "round": 2,
+          "opponentId": "6",
+          "opponentName": "Muthalif Jabeer",
+          "result": "W",
+          "score": 349,
+          "oppScore": 283,
+          "spread": 66
         }
       ]
     },
     "4": {
       "id": "4",
       "name": "Lilanthi Jayaratne",
-      "rank": 12,
+      "rank": 14,
       "wins": 1,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 31,
+      "spread": 29,
       "games": [
         {
           "round": 1,
@@ -79,17 +106,26 @@
           "score": 354,
           "oppScore": 323,
           "spread": 31
+        },
+        {
+          "round": 2,
+          "opponentId": "23",
+          "opponentName": "Zuhriffa Saleem",
+          "result": "L",
+          "score": 246,
+          "oppScore": 248,
+          "spread": -2
         }
       ]
     },
     "5": {
       "id": "5",
       "name": "Sarath Gunawardene",
-      "rank": 15,
-      "wins": 0,
+      "rank": 10,
+      "wins": 1,
       "losses": 1,
       "ties": 0,
-      "spread": -14,
+      "spread": 78,
       "games": [
         {
           "round": 1,
@@ -99,17 +135,26 @@
           "score": 358,
           "oppScore": 372,
           "spread": -14
+        },
+        {
+          "round": 2,
+          "opponentId": "21",
+          "opponentName": "Pushpa Ailapperuma",
+          "result": "W",
+          "score": 344,
+          "oppScore": 252,
+          "spread": 92
         }
       ]
     },
     "6": {
       "id": "6",
       "name": "Muthalif Jabeer",
-      "rank": 4,
+      "rank": 11,
       "wins": 1,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 109,
+      "spread": 43,
       "games": [
         {
           "round": 1,
@@ -119,17 +164,26 @@
           "score": 263,
           "oppScore": 154,
           "spread": 109
+        },
+        {
+          "round": 2,
+          "opponentId": "3",
+          "opponentName": "Ranjit Galappatti",
+          "result": "L",
+          "score": 283,
+          "oppScore": 349,
+          "spread": -66
         }
       ]
     },
     "7": {
       "id": "7",
       "name": "Indira Kandasamy",
-      "rank": 18,
-      "wins": 0,
+      "rank": 12,
+      "wins": 1,
       "losses": 1,
       "ties": 0,
-      "spread": -59,
+      "spread": 39,
       "games": [
         {
           "round": 1,
@@ -139,17 +193,26 @@
           "score": 319,
           "oppScore": 378,
           "spread": -59
+        },
+        {
+          "round": 2,
+          "opponentId": "18",
+          "opponentName": "Bethune Naina Marikka",
+          "result": "W",
+          "score": 369,
+          "oppScore": 271,
+          "spread": 98
         }
       ]
     },
     "8": {
       "id": "8",
       "name": "Indrani Atukorale",
-      "rank": 25,
+      "rank": 22,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -111,
+      "spread": -118,
       "games": [
         {
           "round": 1,
@@ -159,6 +222,15 @@
           "score": 172,
           "oppScore": 283,
           "spread": -111
+        },
+        {
+          "round": 2,
+          "opponentId": "2",
+          "opponentName": "T. Robin Saldin",
+          "result": "L",
+          "score": 315,
+          "oppScore": 322,
+          "spread": -7
         }
       ]
     },
@@ -166,10 +238,10 @@
       "id": "9",
       "name": "Nelun Mather",
       "rank": 3,
-      "wins": 1,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
-      "spread": 111,
+      "spread": 231,
       "games": [
         {
           "round": 1,
@@ -179,17 +251,26 @@
           "score": 283,
           "oppScore": 172,
           "spread": 111
+        },
+        {
+          "round": 2,
+          "opponentId": "16",
+          "opponentName": "Gillian Perera",
+          "result": "W",
+          "score": 356,
+          "oppScore": 236,
+          "spread": 120
         }
       ]
     },
     "10": {
       "id": "10",
       "name": "Lakshmi Jayawardene",
-      "rank": 16,
+      "rank": 25,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -31,
+      "spread": -165,
       "games": [
         {
           "round": 1,
@@ -199,6 +280,15 @@
           "score": 323,
           "oppScore": 354,
           "spread": -31
+        },
+        {
+          "round": 2,
+          "opponentId": "24",
+          "opponentName": "Zaina Azwer",
+          "result": "L",
+          "score": 257,
+          "oppScore": 391,
+          "spread": -134
         }
       ]
     },
@@ -206,10 +296,10 @@
       "id": "11",
       "name": "Shirani Samarasinghe",
       "rank": 2,
-      "wins": 1,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
-      "spread": 116,
+      "spread": 265,
       "games": [
         {
           "round": 1,
@@ -219,17 +309,26 @@
           "score": 343,
           "oppScore": 227,
           "spread": 116
+        },
+        {
+          "round": 2,
+          "opponentId": "14",
+          "opponentName": "Zulfathul Ali",
+          "result": "W",
+          "score": 296,
+          "oppScore": 147,
+          "spread": 149
         }
       ]
     },
     "12": {
       "id": "12",
       "name": "Dillip Wickramasingha",
-      "rank": 11,
-      "wins": 1,
+      "rank": 7,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
-      "spread": 42,
+      "spread": 49,
       "games": [
         {
           "round": 1,
@@ -239,17 +338,26 @@
           "score": 248,
           "oppScore": 206,
           "spread": 42
+        },
+        {
+          "round": 2,
+          "opponentId": "20",
+          "opponentName": "Aini Hulugalle",
+          "result": "W",
+          "score": 292,
+          "oppScore": 285,
+          "spread": 7
         }
       ]
     },
     "13": {
       "id": "13",
       "name": "Fazeena Ghany",
-      "rank": 21,
-      "wins": 0,
+      "rank": 17,
+      "wins": 1,
       "losses": 1,
       "ties": 0,
-      "spread": -82,
+      "spread": -46,
       "games": [
         {
           "round": 1,
@@ -259,17 +367,26 @@
           "score": 225,
           "oppScore": 307,
           "spread": -82
+        },
+        {
+          "round": 2,
+          "opponentId": "22",
+          "opponentName": "Hemamala Karunaratne",
+          "result": "W",
+          "score": 180,
+          "oppScore": 144,
+          "spread": 36
         }
       ]
     },
     "14": {
       "id": "14",
       "name": "Zulfathul Ali",
-      "rank": 9,
+      "rank": 19,
       "wins": 1,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 63,
+      "spread": -86,
       "games": [
         {
           "round": 1,
@@ -279,17 +396,26 @@
           "score": 219,
           "oppScore": 156,
           "spread": 63
+        },
+        {
+          "round": 2,
+          "opponentId": "11",
+          "opponentName": "Shirani Samarasinghe",
+          "result": "L",
+          "score": 147,
+          "oppScore": 296,
+          "spread": -149
         }
       ]
     },
     "15": {
       "id": "15",
       "name": "Udeni Mandawela",
-      "rank": 1,
+      "rank": 9,
       "wins": 1,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 146,
+      "spread": 81,
       "games": [
         {
           "round": 1,
@@ -299,17 +425,26 @@
           "score": 448,
           "oppScore": 302,
           "spread": 146
+        },
+        {
+          "round": 2,
+          "opponentId": "25",
+          "opponentName": "Firdhouse Mohammed",
+          "result": "L",
+          "score": 374,
+          "oppScore": 439,
+          "spread": -65
         }
       ]
     },
     "16": {
       "id": "16",
       "name": "Gillian Perera",
-      "rank": 7,
+      "rank": 16,
       "wins": 1,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 82,
+      "spread": -38,
       "games": [
         {
           "round": 1,
@@ -319,17 +454,26 @@
           "score": 307,
           "oppScore": 225,
           "spread": 82
+        },
+        {
+          "round": 2,
+          "opponentId": "9",
+          "opponentName": "Nelun Mather",
+          "result": "L",
+          "score": 236,
+          "oppScore": 356,
+          "spread": -120
         }
       ]
     },
     "17": {
       "id": "17",
       "name": "Indrani Fernando",
-      "rank": 17,
-      "wins": 0,
+      "rank": 13,
+      "wins": 1,
       "losses": 1,
       "ties": 0,
-      "spread": -42,
+      "spread": 30,
       "games": [
         {
           "round": 1,
@@ -339,17 +483,26 @@
           "score": 206,
           "oppScore": 248,
           "spread": -42
+        },
+        {
+          "round": 2,
+          "opponentId": "26",
+          "opponentName": "Akram Alavi",
+          "result": "W",
+          "score": 303,
+          "oppScore": 231,
+          "spread": 72
         }
       ]
     },
     "18": {
       "id": "18",
       "name": "Bethune Naina Marikka",
-      "rank": 26,
+      "rank": 27,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -116,
+      "spread": -214,
       "games": [
         {
           "round": 1,
@@ -359,6 +512,15 @@
           "score": 227,
           "oppScore": 343,
           "spread": -116
+        },
+        {
+          "round": 2,
+          "opponentId": "7",
+          "opponentName": "Indira Kandasamy",
+          "result": "L",
+          "score": 271,
+          "oppScore": 369,
+          "spread": -98
         }
       ]
     },
@@ -385,11 +547,11 @@
     "20": {
       "id": "20",
       "name": "Aini Hulugalle",
-      "rank": 4,
+      "rank": 8,
       "wins": 1,
-      "losses": 0,
+      "losses": 1,
       "ties": 0,
-      "spread": 109,
+      "spread": 102,
       "games": [
         {
           "round": 1,
@@ -399,17 +561,26 @@
           "score": 418,
           "oppScore": 309,
           "spread": 109
+        },
+        {
+          "round": 2,
+          "opponentId": "12",
+          "opponentName": "Dillip Wickramasingha",
+          "result": "L",
+          "score": 285,
+          "oppScore": 292,
+          "spread": -7
         }
       ]
     },
     "21": {
       "id": "21",
       "name": "Pushpa Ailapperuma",
-      "rank": 19,
+      "rank": 24,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -63,
+      "spread": -155,
       "games": [
         {
           "round": 1,
@@ -419,6 +590,15 @@
           "score": 156,
           "oppScore": 219,
           "spread": -63
+        },
+        {
+          "round": 2,
+          "opponentId": "5",
+          "opponentName": "Sarath Gunawardene",
+          "result": "L",
+          "score": 252,
+          "oppScore": 344,
+          "spread": -92
         }
       ]
     },
@@ -427,9 +607,9 @@
       "name": "Hemamala Karunaratne",
       "rank": 23,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -109,
+      "spread": -145,
       "games": [
         {
           "round": 1,
@@ -439,17 +619,26 @@
           "score": 154,
           "oppScore": 263,
           "spread": -109
+        },
+        {
+          "round": 2,
+          "opponentId": "13",
+          "opponentName": "Fazeena Ghany",
+          "result": "L",
+          "score": 144,
+          "oppScore": 180,
+          "spread": -36
         }
       ]
     },
     "23": {
       "id": "23",
       "name": "Zuhriffa Saleem",
-      "rank": 6,
-      "wins": 1,
+      "rank": 5,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
-      "spread": 107,
+      "spread": 109,
       "games": [
         {
           "round": 1,
@@ -459,17 +648,26 @@
           "score": 393,
           "oppScore": 286,
           "spread": 107
+        },
+        {
+          "round": 2,
+          "opponentId": "4",
+          "opponentName": "Lilanthi Jayaratne",
+          "result": "W",
+          "score": 248,
+          "oppScore": 246,
+          "spread": 2
         }
       ]
     },
     "24": {
       "id": "24",
       "name": "Zaina Azwer",
-      "rank": 22,
-      "wins": 0,
+      "rank": 15,
+      "wins": 1,
       "losses": 1,
       "ties": 0,
-      "spread": -107,
+      "spread": 27,
       "games": [
         {
           "round": 1,
@@ -479,17 +677,26 @@
           "score": 286,
           "oppScore": 393,
           "spread": -107
+        },
+        {
+          "round": 2,
+          "opponentId": "10",
+          "opponentName": "Lakshmi Jayawardene",
+          "result": "W",
+          "score": 391,
+          "oppScore": 257,
+          "spread": 134
         }
       ]
     },
     "25": {
       "id": "25",
       "name": "Firdhouse Mohammed",
-      "rank": 8,
-      "wins": 1,
+      "rank": 4,
+      "wins": 2,
       "losses": 0,
       "ties": 0,
-      "spread": 64,
+      "spread": 129,
       "games": [
         {
           "round": 1,
@@ -499,17 +706,26 @@
           "score": 342,
           "oppScore": 278,
           "spread": 64
+        },
+        {
+          "round": 2,
+          "opponentId": "15",
+          "opponentName": "Udeni Mandawela",
+          "result": "W",
+          "score": 439,
+          "oppScore": 374,
+          "spread": 65
         }
       ]
     },
     "26": {
       "id": "26",
       "name": "Akram Alavi",
-      "rank": 23,
+      "rank": 26,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "ties": 0,
-      "spread": -109,
+      "spread": -181,
       "games": [
         {
           "round": 1,
@@ -519,6 +735,35 @@
           "score": 309,
           "oppScore": 418,
           "spread": -109
+        },
+        {
+          "round": 2,
+          "opponentId": "17",
+          "opponentName": "Indrani Fernando",
+          "result": "L",
+          "score": 231,
+          "oppScore": 303,
+          "spread": -72
+        }
+      ]
+    },
+    "27": {
+      "id": "27",
+      "name": "Swarna Fernando",
+      "rank": 21,
+      "wins": 0,
+      "losses": 1,
+      "ties": 0,
+      "spread": -289,
+      "games": [
+        {
+          "round": 2,
+          "opponentId": "1",
+          "opponentName": "T. M. Saldin",
+          "result": "L",
+          "score": 190,
+          "oppScore": 480,
+          "spread": -289
         }
       ]
     }
